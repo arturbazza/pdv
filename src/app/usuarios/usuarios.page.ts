@@ -12,4 +12,7 @@ export class UsuariosPage implements OnInit {
   ngOnInit() {
   }
 
+  addUsuarios() {
+    
+  }
 }
