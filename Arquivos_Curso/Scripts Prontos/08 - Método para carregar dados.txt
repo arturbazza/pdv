@@ -1,0 +1,29 @@
+carregar(){
+    return new Promise(resolve => {
+      this.clientes = [];
+      let dados = {
+        requisicao : 'listar',
+        nome : this.nome,
+        cpf_adv : this.cpf_adv,
+        limit : this.limit,
+        start : this.start
+        };
+
+        this.provider.dadosApi(dados, 'apiClientes.php').subscribe(data => {
+
+        if(data['result'] == '0') {
+          this.ionViewWillEnter();
+        }else{
+          this.clientes = [];
+          for(let item of data['result']){
+            this.clientes.push(item);
+            
+          }
+        }
+         
+         resolve(true);
+         
+        });
+    });
+    
+  }

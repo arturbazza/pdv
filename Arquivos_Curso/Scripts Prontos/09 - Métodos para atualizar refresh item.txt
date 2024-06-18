@@ -1,0 +1,26 @@
+
+ //atualizar o list view
+
+ doRefresh(event) {
+    
+  setTimeout(() => {
+    this.ionViewWillEnter();
+    event.target.complete();
+  }, 500);
+}
+
+
+//barra de rolagem
+loadData(event) {
+
+  this.start += this.limit;
+
+  setTimeout(() => {
+    this.carregar().then(()=>{ 
+      event.target.complete();
+     });
+   
+  }, 500);
+  
+
+}

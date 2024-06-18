@@ -1,0 +1,6 @@
+https://github.com/JsDaddy/ngx-mask
+
+
+ NgxMaskModule.forRoot({
+      dropSpecialCharacters: false
+    }),

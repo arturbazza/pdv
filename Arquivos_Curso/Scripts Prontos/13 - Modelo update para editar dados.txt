@@ -1,0 +1,8 @@
+$res = $pdo->prepare("UPDATE usuarios SET nome = :nome, email = :email, cpf = :cpf, senha = :senha, nivel = :nivel WHERE id = :id");
+	$res->bindValue(":nome", $nome);
+	$res->bindValue(":email", $email);
+	$res->bindValue(":cpf", $cpf);
+	$res->bindValue(":senha", $senha);
+	$res->bindValue(":nivel", $nivel);
+	$res->bindValue(":id", $id);
+	$res->execute();
