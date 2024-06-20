@@ -8,6 +8,14 @@ import { Router } from '@angular/router';
 })
 export class AddUsuarioPage implements OnInit {
 
+  nome: string = "";
+  cpf: string = "";
+  usuario: string = "";
+  senha: string = "";
+  nivel: string = "";
+  id: string = "";
+
+
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -15,5 +23,11 @@ export class AddUsuarioPage implements OnInit {
 
   Usuarios() {
     this.router.navigate(['usuarios'])
+  }
+
+  cadastrar() {
+  }
+
+  editar() {
   }
 }
