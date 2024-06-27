@@ -1,5 +1,6 @@
+import { Api } from 'Arquivos_Curso/pdv/src/services/api';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-usuario',
@@ -10,21 +11,29 @@ export class AddUsuarioPage implements OnInit {
 
   nome: string = "";
   cpf: string = "";
-  usuario: string = "";
+  email: string = "";
   senha: string = "";
   nivel: string = "";
   id: string = "";
 
 
-  constructor(private router: Router) { }
+  constructor(
+    private router:Router,
+    //private provider:Api,
+    private actRouter:ActivatedRoute,
+  )  { }
 
   ngOnInit() {
+    //ACT ROUTER SERVE PARA PASSAR PARÂMETROS ENTRE PÁGINAS
+    this.actRouter.params.subscribe((data: any) => {      
+    })
   }
 
   Usuarios() {
     this.router.navigate(['usuarios'])
   }
 
+  // funções dos botões que chama a API
   cadastrar() {
   }
 
